@@ -1,0 +1,25 @@
+/* Stili base responsive */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Toggle Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}

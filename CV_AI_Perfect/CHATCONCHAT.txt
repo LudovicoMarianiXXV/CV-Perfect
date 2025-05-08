@@ -1,0 +1,277 @@
+Ecco la *versione modificata dell'RPD* per riflettere la creazione di un *sito internet reattivo* in HTML, CSS e JavaScript (senza riferimenti ad app desktop o Electron), mantenendo tutte le funzionalità principali e adattando il progetto a un contesto web puro:
+
+---
+
+## INIZIANDO DA 0
+
+### 🧠 Obiettivo del progetto:
+
+Realizzare un *sito internet reattivo* che permette agli utenti di generare curriculum professionali con l’aiuto dell’intelligenza artificiale, *direttamente dal browser*, senza installazioni né configurazioni manuali.
+
+---
+
+### ✅ Specifiche tecniche richieste:
+
+* *Tipo:* Sito web responsive accessibile da qualsiasi dispositivo (PC, tablet, smartphone)
+* *Tecnologia frontend:* HTML5, CSS3 (responsive), JavaScript (vanilla o con framework leggero)
+* *Tecnologia backend (opzionale):* Node.js con Express.js (per eventuale supporto lato server, es. generazione PDF)
+* *Output:* Curriculum PDF generati automaticamente dal browser
+* *Lingue disponibili:* Italiano, Inglese, Francese, Tedesco
+
+---
+
+### ⚙ Funzionalità richieste:
+
+* Form dinamico per l’inserimento di dati personali (nome, esperienze, studi, competenze, ecc.)
+* Selezione e anteprima live di diversi *template CV* (temi moderni e professionali)
+* Traduzione automatica del curriculum in 4 lingue
+* Download del CV in PDF con layout professionale
+* Supporto per *tema chiaro/scuro*
+* Funzionamento *completo offline* (dopo il primo caricamento se salvato localmente o scaricato come file ZIP)
+
+---
+
+### 📦 Requisiti distribuzione:
+
+Il progetto deve essere fornito sotto forma di *cartella .zip* contenente:
+
+* Tutti i file HTML, CSS, JS pronti all’uso
+* Template e risorse multilingua integrati
+* Libreria per generazione PDF lato client (es. html2pdf.js, jsPDF, puppeteer se backend incluso)
+* File README.txt con istruzioni d’uso
+* Nessuna installazione o server richiesto per l’utente finale
+
+---
+
+### 📌 Esperienza utente:
+
+1. L’utente accede al sito o scarica il pacchetto .zip
+2. Apre index.html nel browser
+3. Compila i dati richiesti
+4. Seleziona un template
+5. Visualizza l’anteprima
+6. Traduce il CV se necessario
+7. Scarica il PDF finale con un click
+
+---
+
+### 🔒 Offline mode:
+
+Tutti i file, font, modelli e script devono essere inclusi nel pacchetto .zip, permettendo l’uso *completo in modalità offline*. Nessuna risorsa deve essere caricata da internet al momento dell’uso.
+
+---
+
+### 🛠 Tecnologie suggerite (modificabili):
+
+* *Frontend:* HTML5 + CSS3 + JavaScript (no React necessario)
+* *PDF generation:* html2pdf.js, jsPDF o pdfmake
+* *Traduzioni:* JSON statici o i18next in modalità standalone
+* *Responsive design:* Flexbox/Grid, media queries
+* *Dark mode:* toggle JS/CSS
+
+---
+
+### 🧩 Output atteso:
+
+Una cartella .zip pronta per distribuzione contenente:
+
+
+cv-perfect-ai/
+├── index.html
+├── style/
+│   └── main.css
+├── js/
+│   ├── main.js
+│   └── pdf-generator.js
+├── templates/
+│   └── [vari modelli CV in HTML]
+├── translations/
+│   └── [it.json, en.json, fr.json, de.json]
+├── assets/
+│   └── fonts, immagini, icone
+├── README.txt
+└── Tutto già funzionante offline
+
+
+---
+
+### 📣 Messaggio per l’IA:
+
+Voglio che tu crei un *sito completo, offline e funzionante* che possa essere usato anche da persone senza competenze tecniche. Il progetto deve essere *scaricabile come file .zip*, apribile con un semplice doppio clic su index.html, e capace di generare curriculum PDF professionali multilingue *senza connessione internet*. Obiettivo: creare uno strumento vendibile e utilizzabile con la massima semplicità.
+
+---
+
+Vuoi che prepari anche *la struttura di cartelle e file base* per iniziare subito?
+Ecco la struttura completa e pronta all'uso per il tuo progetto di generatore di CV offline. Ho ottimizzato tutto per funzionare senza dipendenze esterne (tutti i file necessari sono inclusi nel pacchetto):
+
+plaintext
+cv-perfect-ai/
+│
+├── index.html                 (Pagina principale con form)
+├── preview.html               (Anteprima CV con pulsante download)
+│
+├── css/
+│   ├── styles.css             (Stili principali)
+│   ├── templates/            (Stili specifici per ogni template)
+│   │   ├── modern.css
+│   │   ├── professional.css
+│   │   └── creative.css
+│   └── dark-mode.css          (Stili per tema scuro)
+│
+├── js/
+│   ├── main.js                (Logica applicazione)
+│   ├── pdf-generator.js       (Generazione PDF con jsPDF)
+│   ├── translations.js        (Gestione multilingua)
+│   └── template-switcher.js   (Cambio template live)
+│
+├── templates/
+│   ├── modern.html            (Struttura HTML template Moderno)
+│   ├── professional.html      (Struttura HTML template Professionale)
+│   └── creative.html          (Struttura HTML template Creativo)
+│
+├── translations/
+│   ├── it.json                (Traduzioni italiano)
+│   ├── en.json                (Traduzioni inglese)
+│   ├── fr.json                (Traduzioni francese)
+│   └── de.json                (Traduzioni tedesco)
+│
+├── assets/
+│   ├── fonts/                 (Fonts locali inclusi)
+│   │   ├── roboto.woff2
+│   │   └── opensans.woff2
+│   ├── icons/                 (Icone SVG)
+│   └── img/                   (Immagini di default)
+│
+└── README.txt                 (Istruzioni semplici)
+
+🚀 File iniziali già pronti (contenuto base):
+1. index.html (struttura base):
+
+html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Perfect AI - Generatore di Curriculum</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/templates/modern.css" id="template-style">
+</head>
+<body>
+    <div class="container">
+        <h1>Genera il tuo CV Perfetto</h1>
+        
+        <div class="form-section">
+            <label for="fullname">Nome Completo</label>
+            <input type="text" id="fullname" placeholder="Mario Rossi">
+            
+            <!-- Altri campi del form qui -->
+            
+            <button id="generate-btn">Genera Anteprima CV</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+2. css/styles.css (base responsive):
+
+css
+/* Stili base responsive */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Toggle Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+3. js/main.js (logica iniziale):
+
+javascript
+document.addEventListener('DOMContentLoaded', function() {
+    // Salva dati nel localStorage
+    const formFields = document.querySelectorAll('input, textarea');
+    
+    formFields.forEach(field => {
+        field.addEventListener('input', () => {
+            localStorage.setItem(field.id, field.value);
+        });
+        
+        // Ripristina valori salvati
+        if(localStorage.getItem(field.id)) {
+            field.value = localStorage.getItem(field.id);
+        }
+    });
+    
+    // Genera anteprima
+    document.getElementById('generate-btn').addEventListener('click', generatePreview);
+});
+
+function generatePreview() {
+    // Raccolta dati e redirect a preview.html
+    const formData = {
+        fullname: document.getElementById('fullname').value,
+        // altri campi...
+    };
+    
+    sessionStorage.setItem('cvData', JSON.stringify(formData));
+    window.location.href = 'preview.html';
+}
+4. js/pdf-generator.js (base per PDF):
+
+javascript
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.text('Curriculum Vitae', 10, 10);
+    doc.text(Nome: ${JSON.parse(sessionStorage.getItem('cvData')).fullname}, 10, 20);
+    
+    doc.save('cv-generated.pdf');
+}
+📥 Come usare questa struttura:
+Crea una cartella cv-perfect-ai
+
+All'interno crea tutte le sottocartelle come nello schema
+
+Copia i contenuti dei file come fornito sopra
+
+Per i file mancanti (templates, traduzioni), puoi espanderli gradualmente
+
+🔧 Prossimi passi suggeriti:
+Completare tutti i campi del form nell'index.html
+
+Implementare i 3 template base nei file HTML nella cartella templates/
+
+Aggiungere le traduzioni complete nei file JSON
+
+Implementare il toggle per la dark mode
+
+Migliorare il generatore PDF con layout avanzati
+
+Vuoi che approfondisca uno di questi componenti in particolare? Posso fornirti:
+
+Il codice completo per un template CV moderno
+
+Il sistema di traduzione multilingua offline
+
+La logica per il cambio template live
+
+L'implementazione della generazione PDF avanzata
