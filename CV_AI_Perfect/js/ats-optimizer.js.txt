@@ -1,0 +1,12 @@
+// js/ats-optimizer.js
+function analyzeATSscore(cvText, jobDescription) {
+  // Controlla keyword matching
+  const matches = jobDescription.keywords.filter(kw => 
+    cvText.toLowerCase().includes(kw.toLowerCase())
+  );
+  
+  return {
+    score: (matches.length / jobDescription.keywords.length) * 100,
+    suggestions: jobDescription.keywords.filter(kw => !matches.includes(kw))
+  };
+}

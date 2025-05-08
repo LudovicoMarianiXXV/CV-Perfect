@@ -1,0 +1,5 @@
+/* Sovrascrittura per template specifico */
+.professional-template .btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  letter-spacing: 1px;
+}

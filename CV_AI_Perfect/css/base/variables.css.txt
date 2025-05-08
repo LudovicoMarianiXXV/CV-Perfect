@@ -1,0 +1,74 @@
+/* ==================== */
+/* VARIABILI DI COLORE  */
+/* ==================== */
+
+:root {
+  /* Colori brand primari */
+  --color-primary: #2563eb;     /* Blu professionale (per intestazioni) */
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e40af;
+
+  /* Colori brand secondari */
+  --color-secondary: #4f46e5;   /* Viola per enfasi */
+  --color-secondary-light: #6366f1;
+  --color-secondary-dark: #4338ca;
+
+  /* Scala di grigi */
+  --color-gray-900: #111827;    /* Testo scuro */
+  --color-gray-700: #374151;
+  --color-gray-500: #6b7280;    /* Testo corpo */
+  --color-gray-300: #d1d5db;    /* Bordi */
+  --color-gray-100: #f3f4f6;    /* Sfondi */
+  --color-gray-50: #f9fafb;     /* Sfondi chiari */
+
+  /* Colori di stato */
+  --color-success: #10b981;     /* Conferme */
+  --color-warning: #f59e0b;     /* Avvisi */
+  --color-error: #ef4444;       /* Errori */
+
+  /* Colori per template CV */
+  --cv-header-bg: var(--color-primary);
+  --cv-header-text: #ffffff;
+  --cv-section-title: var(--color-primary-dark);
+  --cv-border: var(--color-gray-300);
+}
+
+/* ==================== */
+/* TEMA SCURO           */
+/* ==================== */
+[data-theme="dark"] {
+  --color-primary: #3b82f6;
+  --color-gray-900: #f3f4f6;    /* Testo chiaro */
+  --color-gray-100: #1f2937;    /* Sfondi scuri */
+  --cv-header-bg: #1e40af;
+  --cv-section-title: var(--color-primary-light);
+}
+
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/roboto-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/roboto-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/opensans-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/opensans-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}

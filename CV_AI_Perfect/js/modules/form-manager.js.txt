@@ -1,0 +1,64 @@
+class FormManager {
+    constructor() {
+        this.sections = [
+            {
+                id: 'personal-info',
+                title: 'Informazioni Personali',
+                fields: [
+                    { id: 'fullname', type: 'text', label: 'Nome Completo', required: true },
+                    { id: 'profession', type: 'text', label: 'Professione' },
+                    { id: 'email', type: 'email', label: 'Email' },
+                    { id: 'phone', type: 'tel', label: 'Telefono' }
+                ]
+            },
+            {
+                id: 'experiences',
+                title: 'Esperienze Professionali',
+                isRepeatable: true,
+                fields: [
+                    { id: 'job-title', type: 'text', label: 'Ruolo' },
+                    { id: 'company', type: 'text', label: 'Azienda' },
+                    { id: 'period', type: 'text', label: 'Periodo' },
+                    { id: 'description', type: 'textarea', label: 'Descrizione' }
+                ]
+            }
+        ];
+    }
+
+    initForm() {
+        const formSection = document.querySelector('.form-section');
+        
+        this.sections.forEach(section => {
+            const sectionHTML = this.createSection(section);
+            formSection.insertAdjacentHTML('beforeend', sectionHTML);
+            
+            if(section.isRepeatable) {
+                this.addRepeatableLogic(section.id);
+            }
+        });
+    }
+
+    createSection(section) {
+        return `
+            <div class="form-card" id="${section.id}-section">
+                <h3>${section.title}</h3>
+                <div class="form-fields" id="${section.id}-fields">
+                    ${section.fields.map(field => this.createField(field)).join('')}
+                </div>
+                ${section.isRepeatable ? '<button type="button" class="btn-add" data-section="${section.id}">+ Aggiungi</button>' : ''}
+            </div>
+        `;
+    }
+
+    createField(field) {
+        return `
+            <div class="form-group">
+                <label for="${field.id}">${field.label}</label>
+                ${field.type === 'textarea' 
+                    ? `<textarea id="${field.id}" ${field.required ? 'required' : ''}></textarea>`
+                    : `<input type="${field.type}" id="${field.id}" ${field.required ? 'required' : ''}>`
+                }
+            </div>
+        `;
+    }
+}

@@ -1,0 +1,42 @@
+<!-- premium-upgrade-modal.html -->
+<div class="upgrade-modal">
+  <h2>Ottieni il <span class="highlight">CV Perfetto</span></h2>
+
+<!-- upgrade-modal.html -->
+<div class="limited-offer">
+    <div id="offer-timer">⏰ Offerta valida per: 03h 45m</div>
+    <p>Prezzo aumenterà dopo il countdown!</p>
+</div>
+  
+  <div class="pricing-cards">
+    <div class="card">
+      <h3>Pacco One-Shot</h3>
+      <p class="price">€9,99</p>
+      <ul>
+        <li>10 download premium</li>
+        <li>Ottimizzazione ATS</li>
+        <li>Nessun watermark</li>
+      </ul>
+      <button class="cta-button">Sblocca Ora</button>
+    </div>
+    
+    <div class="card popular">
+      <div class="badge">POPOLARE</div>
+      <h3>Abbonamento Annuale</h3>
+      <p class="price">€29</p>
+      <ul>
+        <li>Download illimitati</li>
+        <li>+10 template professionali</li>
+        <li>Supporto prioritario</li>
+      </ul>
+      <button class="cta-button">Risparmia 60%</button>
+    </div>
+  </div>
+  
+  <div class="testimonials">
+    <blockquote>
+      "Con il CV premium ho avuto 3x più colloqui!"
+      <cite>Laura, Digital Marketer</cite>
+    </blockquote>
+  </div>
+</div>

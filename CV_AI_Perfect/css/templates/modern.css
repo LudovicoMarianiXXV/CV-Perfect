@@ -1,0 +1,28 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #333333;
+    --bg-color: #f9fafb;
+}
+
+.cv-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+}
+body {
+  font-family: 'Open Sans', sans-serif; /* Testo normale */
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif; /* Intestazioni */
+}
+.cv-header {
+  background: var(--cv-header-bg);
+  color: var(--cv-header-text);
+}
+
+.section-title {
+  color: var(--cv-section-title);
+  border-bottom: 2px solid var(--color-primary);
+}

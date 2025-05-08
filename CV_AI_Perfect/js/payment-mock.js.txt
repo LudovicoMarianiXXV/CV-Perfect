@@ -1,0 +1,8 @@
+// js/payment-mock.js
+function processPayment(plan) {
+  return new Promise((resolve) => {
+    localStorage.setItem('userTier', 'premium');
+    localStorage.setItem('paymentPlan', plan);
+    setTimeout(() => resolve({ success: true }), 1500); // Simula chiamata API
+  });
+}

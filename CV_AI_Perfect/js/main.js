@@ -27,3 +27,13 @@ function generatePreview() {
     sessionStorage.setItem('cvData', JSON.stringify(formData));
     window.location.href = 'preview.html';
 }
+// Esempio: Pulsante di caricamento
+document.getElementById('generate-btn').addEventListener('click', function() {
+  this.classList.add('btn-loading');
+  this.textContent = 'Generazione in corso';
+  
+  setTimeout(() => {
+    this.classList.remove('btn-loading');
+    this.textContent = 'Genera CV';
+  }, 2000);
+});

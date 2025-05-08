@@ -1,0 +1,10 @@
+<!-- templates/select-template.html -->
+<div class="template-grid">
+  <div class="template" data-tier="free">
+    <img src="templates/modern-preview.jpg">
+  </div>
+  <div class="template locked" data-tier="premium">
+    <img src="templates/pro-preview.jpg">
+    <div class="premium-badge">PREMIUM</div>
+  </div>
+</div>

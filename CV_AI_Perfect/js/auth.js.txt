@@ -1,0 +1,23 @@
+// js/auth.js
+class UserTier {
+  constructor() {
+    this.tier = localStorage.getItem('userTier') || 'free';
+  }
+
+  checkExportLimit() {
+    if(this.tier === 'free') {
+      const exports = parseInt(localStorage.getItem('freeExports') || '0');
+      if(exports >= 1) {
+        this.showUpgradeModal();
+        return false;
+      }
+      localStorage.setItem('freeExports', exports + 1);
+    }
+    return true;
+  }
+
+  showUpgradeModal() {
+    // Mostra popup con confronto piani e CTA
+    document.getElementById('upgrade-modal').classList.add('active');
+  }
+}

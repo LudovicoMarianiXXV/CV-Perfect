@@ -1,0 +1,11 @@
+// js/coverletter-generator.js
+async function generateCoverLetter(jobData, userProfile) {
+  const prompt = `Scrivi una lettera di presentazione per ${userProfile.name}, 
+  ${userProfile.role} con ${userProfile.exp} anni di esperienza, 
+  candidandosi come ${jobData.position} presso ${jobData.company}. 
+  Requisiti: ${jobData.requirements}. 
+  Competenze: ${userProfile.skills}.`;
+  
+  // Integrazione con API AI locale (es. transformers.js)
+  return await localAImodel.generate(prompt);
+}

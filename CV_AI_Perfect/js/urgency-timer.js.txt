@@ -1,0 +1,36 @@
+// js/urgency-timer.js
+function showLimitedOffer() {
+  const endTime = new Date();
+  endTime.setHours(23, 59, 0, 0); // Scade a mezzanotte
+  
+  setInterval(() => {
+    const remaining = endTime - new Date();
+    document.getElementById('offer-timer').innerHTML = 
+      `Offerta valida per: ${Math.floor(remaining/3600000)}h ${Math.floor((remaining%3600000)/60000)}m`;
+  }, 1000);
+}
+// js/urgency-timer.js
+document.addEventListener('DOMContentLoaded', function() {
+    const endTime = new Date();
+    endTime.setHours(endTime.getHours() + 3); // 3 ore dal caricamento
+
+    const timerElement = document.getElementById('offer-timer');
+    
+    if(timerElement) {
+        const timerInterval = setInterval(() => {
+            const now = new Date();
+            const diff = endTime - now;
+            
+            if(diff <= 0) {
+                clearInterval(timerInterval);
+                timerElement.textContent = "Offerta scaduta!";
+                return;
+            }
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            timerElement.textContent = `⏰ Offerta valida per: ${hours}h ${minutes}m`;
+        }, 1000);
+    }
+});

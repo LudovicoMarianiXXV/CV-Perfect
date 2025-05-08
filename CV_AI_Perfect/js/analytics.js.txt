@@ -1,0 +1,9 @@
+// js/analytics.js
+function trackConversion(event) {
+  const events = JSON.parse(localStorage.getItem('analytics') || '{}');
+  events[event] = (events[event] || 0) + 1;
+  localStorage.setItem('analytics', JSON.stringify(events));
+  
+  // Esempio di eventi da tracciare:
+  // 'free_export', 'upgrade_modal_view', 'premium_purchase'
+}

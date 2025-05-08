@@ -1,26 +1,74 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Perfect AI - Generatore di Curriculum</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/templates/modern.css" id="template-style">
+    <title>CV Perfect AI - Generatore Offline</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/base/reset.css">
+    <link rel="stylesheet" href="./css/base/variables.css">
+    <link rel="stylesheet" href="./css/base/utilities.css">
+    <link rel="stylesheet" href="./css/components/buttons.css">
+    <link rel="stylesheet" href="./css/components/forms.css">
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- Template predefinito -->
+    <link rel="stylesheet" href="./css/templates/modern.css" id="template-style">
 </head>
 <body>
-    <div class="container">
-        <h1>Genera il tuo CV Perfetto</h1>
-        
-        <div class="form-section">
-            <label for="fullname">Nome Completo</label>
-            <input type="text" id="fullname" placeholder="Mario Rossi">
-            
-            <!-- Altri campi del form qui -->
-            
-            <button id="generate-btn">Genera Anteprima CV</button>
+    <header class="app-header">
+        <h1 data-i18n="app.title">Generatore di CV</h1>
+        <div class="controls">
+            <button id="theme-toggle" aria-label="Cambia tema">
+                <svg><!-- Icona tema --></svg>
+            </button>
+            <select id="language-select">
+                <option value="it">Italiano</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            </select>
         </div>
-    </div>
+    </header>
 
-    <script src="js/main.js"></script>
+    <main class="app-container">
+        <!-- Form principale -->
+        <section class="form-section">
+            <!-- Sezioni dinamiche verranno aggiunte via JS -->
+        </section>
+        
+        <button id="generate-btn" class="btn-primary" data-i18n="app.generate">
+            Genera Anteprima
+        </button>
+    </main>
+
+    <!-- Librerie JS -->
+    <script src="./js/lib/jspdf.min.js"></script>
+    <script src="./js/lib/i18next.min.js"></script>
+    
+    <!-- Moduli applicazione -->
+    <script src="./js/modules/form-manager.js"></script>
+    <script src="./js/modules/translation.js"></script>
+    <script src="./js/main.js"></script>
+<!-- Inserisci in index.html e preview.html -->
+<div class="upgrade-cta">
+    <button class="upgrade-button" 
+            data-upgrade="one-shot" 
+            onclick="trackConversion('upsell_click')">
+        🚀 Sblocca Funzioni Pro - 9,99€
+    </button>
+</div>
+<link rel="preload" href="assets/fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/variables.css">
+<div class="form-actions">
+  <button class="btn btn-primary" id="generate-btn">
+    Genera CV
+  </button>
+  
+  <button class="btn btn-secondary" id="reset-form">
+    Cancella Tutto
+  </button>
+</div>
 </body>
 </html>

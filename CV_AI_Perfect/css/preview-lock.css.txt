@@ -1,0 +1,17 @@
+/* css/preview-lock.css */
+.premium-preview {
+  filter: blur(8px);
+  position: relative;
+}
+
+.premium-preview::after {
+  content: "UPGRADE TO PREMIUM TO VIEW";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+}

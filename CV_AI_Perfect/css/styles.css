@@ -23,3 +23,6 @@ body.dark-mode {
     background-color: #121212;
     color: #ffffff;
 }
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
